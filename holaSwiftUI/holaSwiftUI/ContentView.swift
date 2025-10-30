@@ -72,7 +72,8 @@ struct ContentView: View {
                 .padding(.top, 50)
             }
             .navigationTitle("About Me")
-            
+            .padding()
+        
             
             
         }
