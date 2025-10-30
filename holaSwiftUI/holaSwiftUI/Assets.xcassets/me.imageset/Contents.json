@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Imagen de WhatsApp 2024-01-20 a las 18.40.40_6e9b364f.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
