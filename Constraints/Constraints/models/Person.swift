@@ -1,13 +1,13 @@
-//
-//  Person.swift
-//  Constraints
-//
-//  Created by CARLOS FERNANDO SANDOVAL LIZARRAGA on 31/10/25.
-//
 import Foundation
 
-struct Person{
-    var fullname:String
-    var height:Double
-    var birthDay:NSDate
+class Person: Codable {
+    var fullname: String
+    var height: Double
+    var birthDay: Date  // mejor usar Date en lugar de NSDate
+
+    init(fullname: String, height: Double, birthDay: Date) {
+        self.fullname = fullname
+        self.height = height
+        self.birthDay = birthDay
+    }
 }
