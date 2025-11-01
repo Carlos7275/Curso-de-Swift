@@ -10,22 +10,9 @@
 		5A153C4A2EB44CF900693B68 /* Constraints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Constraints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		5A153C5C2EB44CFA00693B68 /* Exceptions for "Constraints" folder in "Constraints" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 5A153C492EB44CF900693B68 /* Constraints */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5A153C4C2EB44CF900693B68 /* Constraints */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				5A153C5C2EB44CFA00693B68 /* Exceptions for "Constraints" folder in "Constraints" target */,
-			);
 			path = Constraints;
 			sourceTree = "<group>";
 		};
