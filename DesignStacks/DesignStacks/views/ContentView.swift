@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-//Constantes
-
-
-
-
 struct ContentView: View {
     
     //Valores de entorno o EnviromentValues
