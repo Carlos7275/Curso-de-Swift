@@ -10,22 +10,9 @@
 		5AC806A82EBBAD8600ECA267 /* NotasUIKIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotasUIKIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		5AC806BD2EBBAD8700ECA267 /* Exceptions for "NotasUIKIT" folder in "NotasUIKIT" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 5AC806A72EBBAD8600ECA267 /* NotasUIKIT */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5AC806AA2EBBAD8600ECA267 /* NotasUIKIT */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				5AC806BD2EBBAD8700ECA267 /* Exceptions for "NotasUIKIT" folder in "NotasUIKIT" target */,
-			);
 			path = NotasUIKIT;
 			sourceTree = "<group>";
 		};
