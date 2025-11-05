@@ -6,17 +6,17 @@
 //
 import SwiftUI
 
-struct emoji:View{
-    let emoji :Emoji
-    var body: some View{
-        ZStack{
+struct emoji: View {
+    let emoji: Emoji
+    var body: some View {
+        ZStack {
             Text(emoji.emoji)
                 .shadow(radius: 3)
                 .font(.largeTitle)
-                .frame(width: 48,height: 48)
-                .overlay(Circle().stroke(Color.gray,lineWidth: 3))
-            
+                .frame(width: 48, height: 48)
+                .overlay(Circle().stroke(Color.gray, lineWidth: 3))
+
         }
-        
+
     }
 }
