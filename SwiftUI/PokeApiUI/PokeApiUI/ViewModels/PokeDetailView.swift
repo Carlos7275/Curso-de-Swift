@@ -1,10 +1,10 @@
-import SwiftUI
+import Foundation
 import Combine
 
 @MainActor
 final class PokeViewModel: ObservableObject {
-    @Published var pokemones: [Pokemon] = []
-    @Published var pokemonesFiltrados: [Pokemon] = []
+    @Published var pokemones: [Pokemon] = []          // Todos los Pokémon descargados
+    @Published var pokemonesFiltrados: [Pokemon] = [] // Lista filtrada según búsqueda
     @Published var cargando = false
     @Published var mostrarError = false
     @Published var mensajeError: String = ""
@@ -17,6 +17,7 @@ final class PokeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
+        // Observa cambios en la búsqueda con debounce
         $busqueda
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
             .removeDuplicates()
@@ -37,18 +38,10 @@ final class PokeViewModel: ObservableObject {
         guard !cargando else { return }
         cargando = true
         defer { cargando = false }
-        
-        try? await Task.sleep(nanoseconds: 300_000_000) // Delay opcional
 
         do {
             let response = try await service.obtenerListadoPokemones(pagina: paginaActual, limite: limite)
-            
-            if paginaActual == 1 {
-                pokemones = response
-            } else {
-                pokemones.append(contentsOf: response)
-            }
-            
+            pokemones.append(contentsOf: response)
             paginaActual += 1
             filtrarPokemon(busqueda)
         } catch {
@@ -67,8 +60,8 @@ final class PokeViewModel: ObservableObject {
     }
 
     var shouldLoadMore: Bool {
-        true // PokeAPI tiene muchos Pokémon, puedes usar un límite si quieres
+        // Cargar más si hemos llegado al último Pokémon filtrado
+        guard let last = pokemonesFiltrados.last else { return false }
+        return last.id == pokemones.last?.id
     }
-    
-    
 }

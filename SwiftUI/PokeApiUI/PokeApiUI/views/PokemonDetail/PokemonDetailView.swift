@@ -73,6 +73,7 @@ struct PokemonDetailView: View {
         }
         .navigationTitle(nombreOId.capitalized)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden,for:.tabBar) //Ocultamos la tabbar en el detalle
         .alert("Error", isPresented: $viewModel.mostrarError) {
             Button("Ok", role: .cancel) { }
         } message: {
