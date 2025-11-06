@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "PokeViewModel.ventanaSegunIndice(_:):PokeDetailView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "inicioVentana">
+            </PersistentString>
+            <PersistentString
+               value = "ventana">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
