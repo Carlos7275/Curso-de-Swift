@@ -8,15 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PokeDex-->
+        <!--Pokédex-->
         <scene sceneID="p2z-sx-TB6">
             <objects>
-                <viewController storyboardIdentifier="HomeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6iG-J1-Cje" customClass="HomeViewController" customModule="PokeApiUIKIT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" title="Pokédex" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6iG-J1-Cje" customClass="HomeViewController" customModule="PokeApiUIKIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="maA-ST-c5S">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Buscar Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="CjS-yw-wNd">
+                            <searchBar contentMode="redraw" placeholder="Buscar Pokémon" translatesAutoresizingMaskIntoConstraints="NO" id="CjS-yw-wNd">
                                 <rect key="frame" x="0.0" y="145" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="QXe-2l-EbN"/>
@@ -72,7 +72,7 @@
                             <constraint firstItem="RWN-A0-0Ah" firstAttribute="leading" secondItem="F0D-fF-r3B" secondAttribute="leading" id="zVg-MF-Q8F"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="PokeDex" largeTitleDisplayMode="always" id="Hsj-oB-4ql"/>
+                    <navigationItem key="navigationItem" title="PokéDex" largeTitleDisplayMode="always" id="Hsj-oB-4ql"/>
                     <connections>
                         <outlet property="tbPokemones" destination="RWN-A0-0Ah" id="4pO-cA-gGd"/>
                         <outlet property="txtBusqueda" destination="CjS-yw-wNd" id="A9l-dA-ixy"/>
