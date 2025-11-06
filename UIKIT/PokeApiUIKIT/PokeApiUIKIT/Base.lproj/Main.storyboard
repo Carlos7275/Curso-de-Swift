@@ -16,11 +16,11 @@
             </objects>
             <point key="canvasLocation" x="2784.7328244274809" y="-19.718309859154932"/>
         </scene>
-        <!--Pokedex-->
+        <!--Pokédex-->
         <scene sceneID="ReD-ti-cB3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TD3-7n-9p3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pokedex" image="list.bullet" catalog="system" id="cmX-HY-dcc"/>
+                    <tabBarItem key="tabBarItem" title="Pokédex" image="list.bullet" catalog="system" id="cmX-HY-dcc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N13-yI-Khq">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -41,6 +41,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bUB-MB-k2e" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xe6-yI-T1M">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
