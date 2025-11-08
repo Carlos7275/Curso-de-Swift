@@ -84,8 +84,8 @@ class AuthService {
         }
     }
 
-    // UID actual
-    func obtenerUID() -> String? {
-        return Auth.auth().currentUser?.uid
+    // Obtener Usuario
+    func obtenerUsuario() -> User? {
+        return Auth.auth().currentUser
     }
 }

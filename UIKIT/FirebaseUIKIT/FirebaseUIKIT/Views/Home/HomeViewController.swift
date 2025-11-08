@@ -78,11 +78,16 @@ class HomeViewController: BaseViewController {
                 loading.isHidden = true
 
             } catch let error as NSError {
-                AlertHelper.showAlert(
+                AlertHelper.showRetryAlert(
                     on: self,
-                    title: "Error:",
-                    message: error.localizedDescription
-                )
+                    title: "Error",
+                    message: error.localizedDescription,
+
+                ) {
+
+                    self.cargarUsuario()
+
+                }
             }
 
         }

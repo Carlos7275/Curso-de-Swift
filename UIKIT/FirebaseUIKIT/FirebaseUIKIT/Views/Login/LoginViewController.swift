@@ -29,29 +29,46 @@ class LoginViewController: UIViewController {
 
     }
 
-    @IBAction func btnIniciarSesionAction(_ sender: Any) {
+    @IBAction func btnIniciarSesionAction(_ sender: UIButton) {
+        guard validator.validateAll() else { return }
 
-        if validator.validateAll() {
+        // Guardar la configuración original
+        let originalConfig = sender.configuration
 
-            authService.login(
-                email: txtEmail.text!,
-                password: txtPassword.text!
-            ) { resultado in
+        // Configuración con spinner
+        var config = sender.configuration ?? UIButton.Configuration.filled()
+        config.title = sender.title(for: .normal)
+        config.showsActivityIndicator = true
+        sender.configuration = config
+        sender.isUserInteractionEnabled = false
+
+        authService.login(
+            email: txtEmail.text!,
+            password: txtPassword.text!
+        ) { resultado in
+            DispatchQueue.main.async {
+                // Restaurar configuración original
+                sender.configuration = originalConfig
+                sender.isUserInteractionEnabled = true
+
                 switch resultado {
                 case .success:
-                    goToPage(name: "HomeView", window: self.view.window!,withNavBar: true)
-                    break
+                    if let window = self.view.window {
+                        goToPage(
+                            name: "HomeView",
+                            window: window,
+                            withNavBar: true
+                        )
+                    }
                 case .failure(let error):
                     AlertHelper.showAlert(
                         on: self,
-                        title:"Error:",
+                        title: "Error:",
                         message: error.localizedDescription
                     )
-                    break
-
                 }
-
             }
         }
     }
+
 }
