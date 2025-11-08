@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
             ) { resultado in
                 switch resultado {
                 case .success:
-                    goToPage(name: "HomeView", window: self.view.window!)
+                    goToPage(name: "HomeView", window: self.view.window!,withNavBar: true)
                     break
                 case .failure(let error):
                     AlertHelper.showAlert(
