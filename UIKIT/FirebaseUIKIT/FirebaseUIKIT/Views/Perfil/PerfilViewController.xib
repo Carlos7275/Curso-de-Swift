@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PerfilViewController" customModule="FirebaseUIKIT" customModuleProvider="target">
+            <connections>
+                <outlet property="dpFechaNacimiento" destination="Xzy-3I-dBM" id="NWk-p5-3X3"/>
+                <outlet property="imgPerfil" destination="H7F-t3-yvT" id="ZHw-mf-ULw"/>
+                <outlet property="txtApellidos" destination="eQs-XH-SnA" id="4pO-CY-6x6"/>
+                <outlet property="txtNombres" destination="nlE-gk-DKj" id="V8c-IW-9oV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H7F-t3-yvT">
+                    <rect key="frame" x="96" y="129" width="189" height="189"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="189" id="7iD-km-5OL"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nlE-gk-DKj">
+                    <rect key="frame" x="35" y="341" width="306" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="hVx-5g-frw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQs-XH-SnA">
+                    <rect key="frame" x="35" y="383" width="306" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="53t-S4-uRn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Xzy-3I-dBM">
+                    <rect key="frame" x="112" y="439" width="157" height="34.333333333333314"/>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZA-2T-ecb">
+                    <rect key="frame" x="87" y="580" width="218" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="sYP-NK-WYz"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.down" catalog="system" title="Guardar"/>
+                    <connections>
+                        <action selector="btnGuardarAction:" destination="-1" eventType="touchUpInside" id="52y-YL-LXT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="H7F-t3-yvT" firstAttribute="leading" secondItem="xZA-2T-ecb" secondAttribute="leading" constant="9" id="6RY-oB-T9f"/>
+                <constraint firstItem="nlE-gk-DKj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="9u9-e5-mas"/>
+                <constraint firstItem="H7F-t3-yvT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="9yg-37-8CH"/>
+                <constraint firstItem="H7F-t3-yvT" firstAttribute="centerX" secondItem="nlE-gk-DKj" secondAttribute="centerX" constant="2.5" id="C1f-vK-QT4"/>
+                <constraint firstItem="eQs-XH-SnA" firstAttribute="leading" secondItem="Xzy-3I-dBM" secondAttribute="leading" constant="-77" id="SRx-iD-f8N"/>
+                <constraint firstItem="nlE-gk-DKj" firstAttribute="top" secondItem="H7F-t3-yvT" secondAttribute="bottom" constant="23" id="XTc-ZG-bjV"/>
+                <constraint firstItem="eQs-XH-SnA" firstAttribute="centerX" secondItem="Xzy-3I-dBM" secondAttribute="centerX" constant="-2.5" id="YuP-xQ-D3J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xZA-2T-ecb" secondAttribute="trailing" constant="88" id="ZOh-mO-Ih5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xzy-3I-dBM" secondAttribute="trailing" constant="124" id="aaK-s7-71n"/>
+                <constraint firstItem="nlE-gk-DKj" firstAttribute="trailing" secondItem="eQs-XH-SnA" secondAttribute="trailing" id="mkg-TP-p1D"/>
+                <constraint firstItem="H7F-t3-yvT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="96" id="oFS-5s-deE"/>
+                <constraint firstItem="Xzy-3I-dBM" firstAttribute="top" secondItem="eQs-XH-SnA" secondAttribute="bottom" constant="22" id="pwA-9t-NvC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xZA-2T-ecb" secondAttribute="bottom" constant="149" id="szH-0m-KYl"/>
+                <constraint firstItem="eQs-XH-SnA" firstAttribute="top" secondItem="nlE-gk-DKj" secondAttribute="bottom" constant="8" id="xix-4J-3UN"/>
+                <constraint firstItem="nlE-gk-DKj" firstAttribute="leading" secondItem="eQs-XH-SnA" secondAttribute="leading" id="zNt-LB-09h"/>
+            </constraints>
+            <point key="canvasLocation" x="138.1679389312977" y="153.52112676056339"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.down" catalog="system" width="114" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
