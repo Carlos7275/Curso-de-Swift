@@ -97,5 +97,19 @@ func validPassword(message: String = "La contraseña debe tener mínimo 8 caract
         
         return predicate.evaluate(with: password) ? nil : message
     }
+    
+  
 }
 
+func matchField(_ otherField: UITextField, message: String = "Los campos no coinciden") -> FieldRule {
+    return FieldRule { view in
+        guard
+            let textField = view as? UITextField,
+            let text = textField.text
+        else { return nil }
+
+        let otherText = otherField.text ?? ""
+
+        return text == otherText ? nil : message
+    }
+}
