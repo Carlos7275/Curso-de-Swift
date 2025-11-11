@@ -10,11 +10,6 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-struct Estadisticas {
-    let total: Int
-    let favoritos: Int
-    let noFavoritos: Int
-}
 
 class EstadisticasService {
     

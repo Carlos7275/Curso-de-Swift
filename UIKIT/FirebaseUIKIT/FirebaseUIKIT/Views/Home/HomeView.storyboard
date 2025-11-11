@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,36 +13,36 @@
             <objects>
                 <viewController storyboardIdentifier="HomeView" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="FirebaseUIKIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido/a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPu-Ia-3AG">
-                                <rect key="frame" x="16" y="109" width="152" height="30"/>
+                                <rect key="frame" x="16" y="133" width="151.33333333333334" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUb-La-ofe" customClass="CardView" customModule="FirebaseUIKIT" customModuleProvider="target">
-                                <rect key="frame" x="16" y="159" width="343" height="68"/>
+                                <rect key="frame" x="16" y="180" width="353" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ss-4q-Cmy">
-                                        <rect key="frame" x="8" y="8" width="55" height="52"/>
+                                        <rect key="frame" x="8" y="8" width="48" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="55" id="2Xl-HK-Eww"/>
-                                            <constraint firstAttribute="height" constant="52" id="bRM-WO-gPt"/>
+                                            <constraint firstAttribute="width" constant="48" id="kvc-Kv-Fxb"/>
+                                            <constraint firstAttribute="height" constant="48" id="w5i-9c-fG4"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBf-VT-vF4">
-                                        <rect key="frame" x="71" y="14" width="222" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="ond-Fv-0It"/>
-                                        </constraints>
+                                        <rect key="frame" x="66" y="20" width="242" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEf-rX-dl8">
-                                        <rect key="frame" x="301" y="8" width="42" height="52"/>
+                                        <rect key="frame" x="316" y="17" width="29" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="29" id="fZ1-br-5WZ"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
                                         <connections>
@@ -52,57 +52,38 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="CBf-VT-vF4" firstAttribute="top" secondItem="bUb-La-ofe" secondAttribute="topMargin" constant="6" id="Gsl-ut-rH5"/>
-                                    <constraint firstAttribute="trailing" secondItem="UEf-rX-dl8" secondAttribute="trailing" id="M93-gO-zjr"/>
-                                    <constraint firstAttribute="trailing" secondItem="CBf-VT-vF4" secondAttribute="trailing" constant="50" id="O6B-gX-4kd"/>
-                                    <constraint firstItem="CBf-VT-vF4" firstAttribute="leading" secondItem="1ss-4q-Cmy" secondAttribute="trailing" constant="8" id="UP0-hn-YJA"/>
-                                    <constraint firstItem="1ss-4q-Cmy" firstAttribute="bottom" secondItem="bUb-La-ofe" secondAttribute="bottomMargin" id="VT9-sS-yY0"/>
-                                    <constraint firstItem="1ss-4q-Cmy" firstAttribute="leading" secondItem="bUb-La-ofe" secondAttribute="leadingMargin" id="VZz-eU-KDg"/>
-                                    <constraint firstItem="1ss-4q-Cmy" firstAttribute="top" secondItem="bUb-La-ofe" secondAttribute="top" constant="8" id="Zeq-Sw-SFG"/>
-                                    <constraint firstItem="UEf-rX-dl8" firstAttribute="bottom" secondItem="1ss-4q-Cmy" secondAttribute="bottom" id="dBX-hh-gyN"/>
-                                    <constraint firstItem="UEf-rX-dl8" firstAttribute="top" secondItem="1ss-4q-Cmy" secondAttribute="top" id="jUZ-w8-3Ej"/>
-                                    <constraint firstItem="UEf-rX-dl8" firstAttribute="leading" secondItem="CBf-VT-vF4" secondAttribute="trailing" constant="8" id="vay-G8-RIq"/>
+                                    <constraint firstItem="UEf-rX-dl8" firstAttribute="leading" secondItem="CBf-VT-vF4" secondAttribute="trailing" constant="8" id="7Zz-bK-p1g"/>
+                                    <constraint firstItem="1ss-4q-Cmy" firstAttribute="leading" secondItem="bUb-La-ofe" secondAttribute="leadingMargin" id="86O-kg-XVG"/>
+                                    <constraint firstItem="1ss-4q-Cmy" firstAttribute="top" secondItem="bUb-La-ofe" secondAttribute="topMargin" id="Ar9-2i-g2u"/>
+                                    <constraint firstItem="1ss-4q-Cmy" firstAttribute="top" secondItem="UEf-rX-dl8" secondAttribute="top" constant="-9" id="Mks-nl-KwT"/>
+                                    <constraint firstItem="CBf-VT-vF4" firstAttribute="leading" secondItem="1ss-4q-Cmy" secondAttribute="trailing" constant="10" id="SBj-4p-qsT"/>
+                                    <constraint firstAttribute="trailing" secondItem="UEf-rX-dl8" secondAttribute="trailing" constant="8" id="ZnK-n9-xXq"/>
+                                    <constraint firstAttribute="bottom" secondItem="CBf-VT-vF4" secondAttribute="bottom" constant="37" id="b63-LD-D3P"/>
+                                    <constraint firstItem="CBf-VT-vF4" firstAttribute="top" secondItem="bUb-La-ofe" secondAttribute="top" constant="20" id="cMX-Ol-YpO"/>
+                                    <constraint firstItem="UEf-rX-dl8" firstAttribute="centerY" secondItem="bUb-La-ofe" secondAttribute="centerY" constant="-6" id="gh8-0J-gx7"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZ3-sQ-LXh" customClass="CardView" customModule="FirebaseUIKIT" customModuleProvider="target">
-                                <rect key="frame" x="62" y="309" width="251" height="254"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Estadisticas"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gZ3-sQ-LXh" firstAttribute="top" secondItem="bUb-La-ofe" secondAttribute="bottom" constant="82" id="Af9-8e-bPM"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gZ3-sQ-LXh" secondAttribute="bottom" constant="181" id="BOC-wZ-27z"/>
-                            <constraint firstItem="gZ3-sQ-LXh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="62" id="BwA-M0-1ex"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gZ3-sQ-LXh" secondAttribute="trailing" constant="62" id="KTh-Fq-vbe"/>
-                            <constraint firstItem="bUb-La-ofe" firstAttribute="top" secondItem="tPu-Ia-3AG" secondAttribute="bottom" constant="20" id="L2E-px-opm"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gZ3-sQ-LXh" secondAttribute="trailing" constant="62" id="LR2-8v-bEd"/>
-                            <constraint firstItem="tPu-Ia-3AG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="MKl-fc-SHs"/>
-                            <constraint firstItem="tPu-Ia-3AG" firstAttribute="leading" secondItem="bUb-La-ofe" secondAttribute="leading" id="QkE-o3-fVF"/>
-                            <constraint firstItem="bUb-La-ofe" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailingMargin" id="Txu-I8-z9w"/>
-                            <constraint firstItem="tPu-Ia-3AG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="9" id="brN-J4-mNB"/>
-                            <constraint firstItem="gZ3-sQ-LXh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="62" id="cTw-IK-QV4"/>
+                            <constraint firstItem="tPu-Ia-3AG" firstAttribute="leading" secondItem="bUb-La-ofe" secondAttribute="leading" id="9PY-XA-Dbz"/>
+                            <constraint firstItem="bUb-La-ofe" firstAttribute="top" secondItem="tPu-Ia-3AG" secondAttribute="bottom" constant="17" id="SdR-9U-OL6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bUb-La-ofe" secondAttribute="bottom" constant="546" id="e5F-t9-grv"/>
+                            <constraint firstItem="tPu-Ia-3AG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="9" id="hD9-BJ-jGp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bUb-La-ofe" secondAttribute="trailing" constant="33" id="pxo-eI-rQO"/>
+                            <constraint firstItem="tPu-Ia-3AG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="xs3-Ve-0Nz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mi Diario Personal" id="vt5-Gn-i9U"/>
                     <connections>
-                        <outlet property="imagePerfil" destination="1ss-4q-Cmy" id="gsu-s4-JMp"/>
-                        <outlet property="lblNombre" destination="CBf-VT-vF4" id="wk9-Wc-ZMa"/>
+                        <outlet property="imagePerfil" destination="1ss-4q-Cmy" id="0iC-PM-nx1"/>
+                        <outlet property="lblNombre" destination="CBf-VT-vF4" id="XjF-j6-Zg8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3877.5999999999999" y="130.78817733990149"/>
+            <point key="canvasLocation" x="3876.1194029850744" y="130.43478260869566"/>
         </scene>
     </scenes>
     <resources>

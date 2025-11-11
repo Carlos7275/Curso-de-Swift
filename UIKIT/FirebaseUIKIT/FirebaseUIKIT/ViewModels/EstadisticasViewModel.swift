@@ -12,7 +12,7 @@ import Combine
 class EstadisticasViewModel: ObservableObject {
     
     private let service = EstadisticasService()
-    private var subscriptions = Set<AnyCancellable>()
+     var subscriptions = Set<AnyCancellable>()
     
     // Estadísticas publicadas para que la UI se actualice automáticamente
     @Published var total: Int = 0

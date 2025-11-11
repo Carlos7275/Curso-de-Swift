@@ -1,4 +1,5 @@
 import UIKit
+
 class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -8,18 +9,17 @@ class BaseViewController: UIViewController {
 
     private func configurarMenu() {
 
-        // Acción - Info de la app
-        let infoAction = UIAction(title: "Información", image: UIImage(systemName: "info.circle")) { _ in
-            self.mostrarInfo()
-        }
-
         // Acción - Cerrar sesión
-        let logoutAction = UIAction(title: "Cerrar sesión", image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), attributes: .destructive) { _ in
+        let logoutAction = UIAction(
+            title: "Cerrar sesión",
+            image: UIImage(systemName: "rectangle.portrait.and.arrow.right"),
+            attributes: .destructive
+        ) { _ in
             self.cerrarSesion()
         }
 
         // Menu
-        let menu = UIMenu(title: "", children: [infoAction, logoutAction])
+        let menu = UIMenu(title: "", children: [logoutAction])
 
         // Botón con menú
         navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -28,11 +28,6 @@ class BaseViewController: UIViewController {
             primaryAction: nil,
             menu: menu
         )
-    }
-
-    private func mostrarInfo() {
-        print("Mostrar información de la app")
-        // Aquí puedes mostrar un modal, alerta o pantalla
     }
 
     private func cerrarSesion() {
