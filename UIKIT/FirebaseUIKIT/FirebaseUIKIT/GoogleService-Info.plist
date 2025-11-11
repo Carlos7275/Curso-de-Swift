@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.carlos.FirebaseUIKIT</string>
+	<string>com.carlos.MiDiarioPersonal</string>
 	<key>PROJECT_ID</key>
 	<string>fir-uikit-45186</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:79271088417:ios:7885893d116abaf465ee60</string>
+	<string>1:79271088417:ios:3423b45f83323b6865ee60</string>
 </dict>
 </plist>
