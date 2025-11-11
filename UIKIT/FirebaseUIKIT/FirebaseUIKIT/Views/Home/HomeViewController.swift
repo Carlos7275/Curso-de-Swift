@@ -22,31 +22,10 @@ class HomeViewController: BaseViewController {
 
     let homeViewModel: HomeViewModel = HomeViewModel()
 
-    func configurarVistaLoading() {
-        view.addSubview(loading)
-        NSLayoutConstraint.activate([
-            loading.topAnchor.constraint(equalTo: view.topAnchor),
-            loading.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            loading.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            loading.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        ])
-
-        // Agregar spinner dentro del overlay
-        loading.addSubview(spinner)
-        NSLayoutConstraint.activate([
-            spinner.centerXAnchor.constraint(
-                equalTo: loading.centerXAnchor
-            ),
-            spinner.centerYAnchor.constraint(
-                equalTo: loading.centerYAnchor
-            ),
-        ])
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configurarVistaLoading()
         spinner.startAnimating()
 
         cargarUsuario()
@@ -164,7 +143,6 @@ class HomeViewController: BaseViewController {
                 }
 
                 spinner.stopAnimating()
-                loading.isHidden = true
 
             } catch let error as NSError {
                 AlertHelper.showRetryAlert(
