@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m20-j8-JJe">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MAPA UIKIT-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Maps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwt-yh-uYH">
+                                <rect key="frame" x="0.0" y="212" width="399" height="572"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Buscar un lugar" translatesAutoresizingMaskIntoConstraints="NO" id="Wmt-am-2qU">
+                                <rect key="frame" x="0.0" y="155" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5wb-sl-3ll"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jwt-yh-uYH" secondAttribute="trailing" constant="-6" id="2fj-wo-tLo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jwt-yh-uYH" secondAttribute="bottom" id="Aft-iC-3hb"/>
+                            <constraint firstItem="jwt-yh-uYH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="B8r-gB-Saf"/>
+                            <constraint firstItem="jwt-yh-uYH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jaK-kJ-Bzn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MAPA UIKIT" id="qLQ-Mm-lSV">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="5Ar-88-7oR">
+                            <connections>
+                                <segue destination="gQ8-eb-HGV" kind="show" destinationCreationSelector="segueSwiftUI:" id="aJl-Ul-28s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapa" destination="jwt-yh-uYH" id="rT6-ef-20d"/>
+                        <outlet property="txtBusqueda" destination="Wmt-am-2qU" id="1tz-oH-A4t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063.3587786259541" y="95.774647887323951"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="1De-2d-Gg5">
+            <objects>
+                <hostingController id="gQ8-eb-HGV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DCg-PN-9vp"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pi7-qQ-vZC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="103"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vbI-DO-zLb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m20-j8-JJe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="khj-w7-On7">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hun-OH-lfo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSS-FK-I9y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.64122137404578" y="95.774647887323951"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
