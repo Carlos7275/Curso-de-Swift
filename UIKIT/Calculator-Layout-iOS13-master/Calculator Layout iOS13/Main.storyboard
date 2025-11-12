@@ -26,19 +26,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZH-6S-eSo">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gC2-i9-XzD">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" allowsEditingTextAttributes="YES" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-i0-Olh">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="143"/>
-                                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="gC2-i9-XzD" firstAttribute="leading" secondItem="dZH-6S-eSo" secondAttribute="leading" constant="20" id="11U-do-CGx"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gC2-i9-XzD" secondAttribute="trailing" constant="20" id="bK7-Mn-K48"/>
-                                                    <constraint firstAttribute="bottom" secondItem="gC2-i9-XzD" secondAttribute="bottom" id="l5A-Nk-z4O"/>
-                                                    <constraint firstItem="gC2-i9-XzD" firstAttribute="top" secondItem="dZH-6S-eSo" secondAttribute="top" id="lQl-NY-YV5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="a4x-i0-Olh" secondAttribute="bottom" id="0h4-Yr-tGr"/>
+                                                    <constraint firstItem="a4x-i0-Olh" firstAttribute="leading" secondItem="dZH-6S-eSo" secondAttribute="leading" constant="20" id="50K-hI-qBy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a4x-i0-Olh" secondAttribute="trailing" constant="20" id="W0w-cn-LXY"/>
+                                                    <constraint firstItem="a4x-i0-Olh" firstAttribute="top" secondItem="dZH-6S-eSo" secondAttribute="top" id="vg8-AZ-E8W"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -316,7 +315,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lblResultado" destination="gC2-i9-XzD" id="mc4-0b-5Os"/>
+                        <outlet property="lblResultado" destination="a4x-i0-Olh" id="l36-Op-3l9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3E-z2-QY8" sceneMemberID="firstResponder"/>
@@ -326,7 +325,7 @@
     </scenes>
     <resources>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
