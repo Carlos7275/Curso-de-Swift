@@ -1,0 +1,105 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "B57034F9",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "80F7418C",
+      "localizations" : [
+        {
+          "description" : "Libro de codigo da vinci",
+          "displayName" : "Codigo Da Vinci",
+          "locale" : "es_MX"
+        }
+      ],
+      "productID" : "com.carlos.BookStore.CodigoDaVinci",
+      "referenceName" : "CodigoDavinci",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "80450E2D",
+      "localizations" : [
+        {
+          "description" : "Libro de harry potter la piedra y filosofal ",
+          "displayName" : "Harry Potter y la piedra filosofal",
+          "locale" : "es_MX"
+        }
+      ],
+      "productID" : "com.carlos.BookStore.harrypoter1",
+      "referenceName" : "Harry Potter y la piedra filosofal",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "B80C3468",
+      "localizations" : [
+
+      ],
+      "name" : "Full Access",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "B041C8E7",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Acceso a todos los libros de la app",
+              "displayName" : "Full Access",
+              "locale" : "es_MX"
+            }
+          ],
+          "productID" : "com.carlos.BookStore.fullAccess",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Full Access",
+          "subscriptionGroupID" : "B80C3468",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
