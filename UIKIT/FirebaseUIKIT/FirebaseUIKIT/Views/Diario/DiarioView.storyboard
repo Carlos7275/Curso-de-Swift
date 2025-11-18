@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" verticalCompressionResistancePriority="751" placeholder="Buscar Diario" translatesAutoresizingMaskIntoConstraints="NO" id="9zK-Zy-zKs">
-                                <rect key="frame" x="16" y="118" width="343" height="64"/>
+                                <rect key="frame" x="9" y="118" width="374" height="57"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="SFI-H1-QCj"/>
                                 </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxC-P0-G5G">
-                                <rect key="frame" x="16" y="201" width="343" height="14"/>
+                                <rect key="frame" x="18" y="194" width="359" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="99t-X6-s4O"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8SS-vE-bsf">
-                                <rect key="frame" x="16" y="230" width="402" height="645"/>
+                                <rect key="frame" x="16" y="223" width="402" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diarioCell" textLabel="2Qz-ra-x46" detailTextLabel="e6y-VK-uni" style="IBUITableViewCellStyleSubtitle" id="aZd-1D-NuG" customClass="DiarioCell" customModule="FirebaseUIKIT" customModuleProvider="target">
@@ -63,7 +63,7 @@
                                 </prototypes>
                             </tableView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="Favoritos" id="RVh-L3-GEz">
-                                <rect key="frame" x="125" y="194" width="345" height="28"/>
+                                <rect key="frame" x="131" y="187" width="345" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                         </subviews>
@@ -71,15 +71,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8SS-vE-bsf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="91" id="3Mx-df-2iX"/>
+                            <constraint firstItem="9zK-Zy-zKs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="4rg-sz-zRy"/>
                             <constraint firstItem="9zK-Zy-zKs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="4sA-Rf-llt"/>
                             <constraint firstItem="8SS-vE-bsf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" constant="20.5" id="9j8-cZ-zv3"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9zK-Zy-zKs" secondAttribute="trailing" constant="34" id="VCU-jZ-Ong"/>
-                            <constraint firstItem="uxC-P0-G5G" firstAttribute="trailing" secondItem="9zK-Zy-zKs" secondAttribute="trailing" id="Yq9-cC-1ff"/>
+                            <constraint firstItem="RVh-L3-GEz" firstAttribute="top" secondItem="9zK-Zy-zKs" secondAttribute="bottom" constant="12" id="Cf5-Vr-EGO"/>
+                            <constraint firstItem="9zK-Zy-zKs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="9" id="EuU-xC-diI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9zK-Zy-zKs" secondAttribute="trailing" constant="10" id="VCU-jZ-Ong"/>
+                            <constraint firstItem="uxC-P0-G5G" firstAttribute="trailing" secondItem="9zK-Zy-zKs" secondAttribute="trailing" constant="-6" id="Yq9-cC-1ff"/>
                             <constraint firstItem="uxC-P0-G5G" firstAttribute="centerY" secondItem="RVh-L3-GEz" secondAttribute="centerY" id="dMb-ag-r7S"/>
                             <constraint firstItem="8SS-vE-bsf" firstAttribute="top" secondItem="RVh-L3-GEz" secondAttribute="bottom" constant="8" id="eJF-dz-daH"/>
                             <constraint firstItem="8SS-vE-bsf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jMl-0A-VxH"/>
-                            <constraint firstItem="9zK-Zy-zKs" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="m83-Rj-Xvi"/>
-                            <constraint firstItem="uxC-P0-G5G" firstAttribute="leading" secondItem="9zK-Zy-zKs" secondAttribute="leading" id="qeG-Vk-vD1"/>
+                            <constraint firstItem="9zK-Zy-zKs" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="-7" id="m83-Rj-Xvi"/>
+                            <constraint firstItem="uxC-P0-G5G" firstAttribute="leading" secondItem="9zK-Zy-zKs" secondAttribute="leading" constant="9" id="qeG-Vk-vD1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9zK-Zy-zKs" secondAttribute="trailing" constant="10" id="srN-RN-Njs"/>
                         </constraints>
                     </view>
                     <connections>
