@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var btnLoginGoogle: UIButton!
     @IBOutlet weak var btnIniciarSesion: UIButton!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -69,6 +70,31 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+
+    @IBAction func btnLoginGoogleAction(_ sender: Any) {
+        
+        
+        AuthService.shared.loginConGoogle(presenting: self) { result in
+            switch result {
+            case .success(let _uid):
+                // Navegar a tu Home
+                if let window = self.view.window {
+                    goToPage(
+                        name: "HomeView",
+                        window: window,
+                        withNavBar: true
+                    )
+                }
+            case .failure(let error):
+                AlertHelper.showAlert(
+                    on: self,
+                    title: "Error:",
+                    message: error.localizedDescription
+                )
+            }
+        }
+
     }
 
 }
