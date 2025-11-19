@@ -40,12 +40,7 @@ class DiarioViewController: BaseViewController, UITableViewDelegate,
 
     private let refreshControl = UIRefreshControl()
 
-    private let spinner: UIActivityIndicatorView = {
-        let sp = UIActivityIndicatorView(style: .large)
-        sp.hidesWhenStopped = true
-        sp.color = .systemBlue
-        return sp
-    }()
+   
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -118,7 +113,7 @@ class DiarioViewController: BaseViewController, UITableViewDelegate,
             .sink { [weak self] diarios in
                 self?.tbDiarios.reloadData()
                 self?.lblNoDiarios.isHidden = !diarios.isEmpty
-                self?.spinner.stopAnimating()
+                spinner.stopAnimating()
                 self?.refreshControl.endRefreshing()
             }
             .store(in: &subscriptions)
