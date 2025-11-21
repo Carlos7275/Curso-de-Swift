@@ -1,37 +1,68 @@
+import Combine
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    private let emptyLabel: UILabel = {
-        let label = UILabel()
-        label.text = "No se encontraron resultados"
-        label.textAlignment = .center
-        label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        label.isHidden = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
 
     // MARK: - IBOutlets
     @IBOutlet weak var txtBusqueda: UISearchBar!
     @IBOutlet weak var collectionMovies: UICollectionView!
 
+    private var cancellables = Set<AnyCancellable>()
+
     // MARK: - Properties
     private let movieViewModel = MoviesViewModel()
     private var searchTimer: Timer?
+
+    private var refresh = UIRefreshControl()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupEmptyLabel()
+        setupRefreshControl()
+        setupObserverError()
         setupSpinner()
         txtBusqueda.delegate = self
         loadInitialMovies()
 
     }
+    ///Observamos los cambios que hay en los errores del viewModel y mostramos si hay error
+    func setupObserverError() {
+        movieViewModel.$showError.sink { [weak self] showError in
+            guard let self = self else { return }
 
+            if showError {
+                AlertHelper.showAlert(
+                    on: self,
+                    title: "Error:",
+                    message: movieViewModel.errorMessage
+                )
+            }
+        }.store(in: &cancellables)
+    }
+
+    ///Configuramos el refresh hacia el collection view para actualizar con pull on refresh
+    private func setupRefreshControl() {
+        refresh.addTarget(
+            self,
+            action: #selector(refreshData),
+            for: .valueChanged
+        )
+        collectionMovies.refreshControl = refresh
+
+    }
+    @objc
+    ///Configuramos la funcion para el pull on refresh que cargara las peliculas iniciales
+    private func refreshData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.loadInitialMovies()
+            self.refresh.endRefreshing()
+
+        }
+    }
+
+    ///Configuramos la etiqueta de no hay datos en la vista
     private func setupEmptyLabel() {
         view.addSubview(emptyLabel)
         NSLayoutConstraint.activate([
@@ -40,6 +71,7 @@ class HomeViewController: UIViewController {
         ])
     }
 
+    ///Configuramos el spinner en la vista
     private func setupSpinner() {
         view.addSubview(spinner)
         NSLayoutConstraint.activate([
@@ -48,6 +80,7 @@ class HomeViewController: UIViewController {
         ])
     }
     // MARK: - Setup
+    ///Configuramos la collection view para que utilize la celda reutilizable y sus delegados
     private func setupCollectionView() {
         collectionMovies.delegate = self
         collectionMovies.dataSource = self
@@ -59,17 +92,19 @@ class HomeViewController: UIViewController {
         )
     }
 
+    ///Mostramos el spinner
     private func showSpinner() {
         spinner.startAnimating()
         collectionMovies.isUserInteractionEnabled = false
     }
-
+    ///Escondemos el spinner de la pantalla
     private func hideSpinner() {
         spinner.stopAnimating()
         collectionMovies.isUserInteractionEnabled = true
     }
 
     // MARK: - Data
+    ///Precargamos las peliculas iniciales
     private func loadInitialMovies() {
         showSpinner()
         movieViewModel.loadMovies()
@@ -78,11 +113,11 @@ class HomeViewController: UIViewController {
             self.hideSpinner()
         }
     }
-
+    ///Recargamos el collection y si no hay peliculas mostramos el emptylabel
     private func reloadCollection() {
         DispatchQueue.main.async {
             self.collectionMovies.reloadData()
-            self.emptyLabel.isHidden = !self.movieViewModel.currentMovies
+            emptyLabel.isHidden = !self.movieViewModel.currentMovies
                 .isEmpty
         }
     }
@@ -91,6 +126,7 @@ class HomeViewController: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
+    ///Determinamos cuantos datos tendra el uicollectionview en este caso utilizamos las peliculas guardadas en currentmovies
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -98,6 +134,8 @@ extension HomeViewController: UICollectionViewDataSource {
         movieViewModel.currentMovies.count
     }
 
+    
+    ///Configuramos el formato de la celda personalizada
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
@@ -127,6 +165,7 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
 
+    ///Delegado que nos sirve para llevarnos ala pagina de peliculas detalle al seleccionar una pelicula en el uicollection
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
@@ -135,7 +174,7 @@ extension HomeViewController: UICollectionViewDelegate {
         let movie = movieViewModel.currentMovies[indexPath.item]
 
         let storyboard = UIStoryboard(name: "MoviesDetailView", bundle: nil)
-        
+
         let viewController =
             storyboard.instantiateViewController(
                 withIdentifier: "MoviesDetailViewController"
@@ -147,6 +186,7 @@ extension HomeViewController: UICollectionViewDelegate {
         )
     }
 
+    ///Especificamos que cuando cargue una nueva celda cargue mas peliculas.
     func collectionView(
         _ collectionView: UICollectionView,
         willDisplay cell: UICollectionViewCell,
@@ -164,6 +204,7 @@ extension HomeViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
+    ///Especificamos el tamaño que va tomar el collection view cell en pantalla
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -190,7 +231,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     ) -> CGFloat {
         10
     }
-
+    
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -203,16 +244,20 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UISearchBarDelegate
 extension HomeViewController: UISearchBarDelegate {
 
+    ///Configuramos el delegate para la busqueda con un timer para buscar con delay
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchTimer?.invalidate()
-
+        //Configuramos el timer con un intervalo de 0.5 segundos
         searchTimer = Timer.scheduledTimer(
             withTimeInterval: 0.5,
             repeats: false
         ) { [weak self] _ in
             guard let self = self else { return }
+            
             Task { @MainActor in
                 self.showSpinner()
+                
+                // Si el texto de la busqueda esta vacio cargaremos las peliculas iniciales en caso contrario buscaremos la pelicula especifica
                 if searchText.isEmpty {
                     self.movieViewModel.loadMovies()
                 } else {

@@ -2,7 +2,7 @@ import Alamofire
 import Foundation
 import RxSwift
 
-struct MoviesService {
+struct MoviesService : MoviesServiceProtocol {
 
     let secrets = PlistManager(fileName: "secrets")
 

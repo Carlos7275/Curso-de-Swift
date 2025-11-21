@@ -24,38 +24,41 @@ class MoviesDetailViewController: UIViewController, UICollectionViewDelegate,
 
     // MARK: - Properties
     var movie: Movies?
-    var images: [String] = []  // Array con rutas de imágenes para el carrusel
+    var images: [String] = []
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = movie?.title
 
-        // Preparamos las imágenes del carrusel
+        setupImages()
+        setupCollectionView()
+        setData()
+       
+    }
+    ///Configuramos las imagenes que vendran en el carrusel en este caso son las imagenes del poster y la imagen trasera.
+    private func setupImages(){
         images = [
             movie?.posterPath ?? "",
             movie?.backdropPath ?? "",
-        ].filter { !$0.isEmpty }  // Eliminamos strings vacíos
-
-        setData()  // Configuramos los labels y la imagen principal
-        setupCollectionView()  // Configuramos el carrusel
+        ].filter { !$0.isEmpty }
     }
 
     // MARK: - Configuración del Carrusel
+    ///Configuramos el collection view del carrousel con sus delegados y sus celdas personalizadas
     private func setupCollectionView() {
         coleccionImagenes.delegate = self
         coleccionImagenes.dataSource = self
-
-        // Registramos la celda XIB
+        
+        //Se configura la celda personalizada que tendra el collection view
         let nib = UINib(nibName: "CarrouselCellView", bundle: nil)
         coleccionImagenes.register(nib, forCellWithReuseIdentifier: "CarrouselCellView")
-
-        // Configuración del layout para scroll horizontal y sin padding
+        // Se configura el layout del collection view
         if let layout = coleccionImagenes.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
-            layout.minimumLineSpacing = 2       // muy poco espacio entre celdas
+            layout.minimumLineSpacing = 2
             layout.minimumInteritemSpacing = 0
-            layout.sectionInset = .zero         // sin padding lateral
+            layout.sectionInset = .zero
         }
 
         coleccionImagenes.showsHorizontalScrollIndicator = false
@@ -63,6 +66,7 @@ class MoviesDetailViewController: UIViewController, UICollectionViewDelegate,
 
 
     // MARK: - UICollectionViewDataSource
+    ///Se especifica cuantas imagenes tendra el carrousel
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -70,6 +74,7 @@ class MoviesDetailViewController: UIViewController, UICollectionViewDelegate,
         return images.count
     }
 
+    ///Se especifica el formato de la celda personalizada
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
@@ -105,6 +110,8 @@ class MoviesDetailViewController: UIViewController, UICollectionViewDelegate,
 
         return cell
     }
+    
+    ///Se especifica el tamaño de la celda
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -117,6 +124,7 @@ class MoviesDetailViewController: UIViewController, UICollectionViewDelegate,
 
 
     // MARK: - Configuración de Labels e Imagen Principal
+    ///Establecemos los datos alos componentes de la vista
     func setData() {
         // Imagen principal
         if let posterPath = movie?.posterPath,
