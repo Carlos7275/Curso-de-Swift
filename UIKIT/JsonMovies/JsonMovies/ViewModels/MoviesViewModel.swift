@@ -1,8 +1,7 @@
-
-import Foundation
 import Combine
+import Foundation
 import RxSwift
-@MainActor
+
 class MoviesViewModel: ObservableObject {
     @Published var movies: [Movies] = []
     @Published var searchResults: [Movies] = []
@@ -12,13 +11,18 @@ class MoviesViewModel: ObservableObject {
     @Published var showError = false
     @Published var page: Int = 1
     @Published var isSearching: Bool = false
-    
+
     var currentMovies: [Movies] {
         return isSearching ? searchResults : movies
     }
 
     let disposeBag = DisposeBag()
-    let moviesService = MoviesService()
+    let moviesService: MoviesServiceProtocol
+
+    
+    init(service: MoviesServiceProtocol = MoviesService()) {
+        moviesService = service
+    }
 
     func fetch(movie: String) -> Observable<Response<Movies>> {
         return moviesService.fetchAMovie(movie: movie)
@@ -58,7 +62,9 @@ class MoviesViewModel: ObservableObject {
         // No paginamos si estamos en búsqueda
         guard !isSearching else { return }
         guard !isLoading else { return }
-        guard let index = movies.firstIndex(where: { $0.id == movie.id }) else { return }
+        guard let index = movies.firstIndex(where: { $0.id == movie.id }) else {
+            return
+        }
 
         let threshold = movies.count - 4
         if index == threshold {
