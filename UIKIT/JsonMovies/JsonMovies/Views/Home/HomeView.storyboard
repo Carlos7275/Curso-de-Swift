@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buscador de Peliculas-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HomeView" title="Buscador de Peliculas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="JsonMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Buscar una Pelicula" translatesAutoresizingMaskIntoConstraints="NO" id="RBK-Bp-yV4">
+                                <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4e5-ms-gfa"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="gG7-qU-mrf"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M3v-yy-nTl">
+                                <rect key="frame" x="0.0" y="162" width="393" height="622"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZS3-wN-d0T">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M3v-yy-nTl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Kfu-cd-QL5"/>
+                            <constraint firstItem="RBK-Bp-yV4" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="LKL-30-M8q"/>
+                            <constraint firstItem="RBK-Bp-yV4" firstAttribute="leading" secondItem="M3v-yy-nTl" secondAttribute="leading" id="c65-1G-i80"/>
+                            <constraint firstItem="M3v-yy-nTl" firstAttribute="top" secondItem="RBK-Bp-yV4" secondAttribute="bottom" id="dDe-en-3fT"/>
+                            <constraint firstItem="RBK-Bp-yV4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="e75-6s-1fG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="M3v-yy-nTl" secondAttribute="trailing" id="hZT-bF-a2q"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="M3v-yy-nTl" secondAttribute="bottom" id="mSA-Sj-Ifx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionMovies" destination="M3v-yy-nTl" id="Uxy-HL-Kvr"/>
+                        <outlet property="txtBusqueda" destination="RBK-Bp-yV4" id="hpE-xj-j7b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="130.98591549295776"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
