@@ -31,5 +31,6 @@ fastlane/test_output
 *.DS_Store
 *.swp
 
-secrets.plist
+**/secrets.plist
+
 
