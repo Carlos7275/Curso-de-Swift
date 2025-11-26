@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reels-->
+        <scene sceneID="MLJ-dh-VMk">
+            <objects>
+                <viewController storyboardIdentifier="ReelsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J0f-PK-Jr9" customClass="ReelsViewController" customModule="onBoardReelsUIKIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dYh-wy-meZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j3e-VM-fkU">
+                                <rect key="frame" x="0.0" y="30" width="393" height="754"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="av8-TI-dLQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xk1-bu-Og4"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j3e-VM-fkU" firstAttribute="leading" secondItem="dYh-wy-meZ" secondAttribute="leading" id="61i-ta-2Bf"/>
+                            <constraint firstAttribute="trailing" secondItem="j3e-VM-fkU" secondAttribute="trailing" id="RJF-gw-U0P"/>
+                            <constraint firstItem="xk1-bu-Og4" firstAttribute="bottom" secondItem="j3e-VM-fkU" secondAttribute="bottom" id="af9-zB-NYB"/>
+                            <constraint firstItem="j3e-VM-fkU" firstAttribute="top" secondItem="dYh-wy-meZ" secondAttribute="topMargin" constant="-88" id="jhV-4j-Rz2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Reels" image="movieclapper" catalog="system" id="UMQ-xV-zNk"/>
+                    <connections>
+                        <outlet property="collectionVideos" destination="j3e-VM-fkU" id="P89-Zu-eqm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3MO-Gb-dDR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2977.8625954198474" y="95.070422535211279"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="movieclapper" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
