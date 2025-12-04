@@ -13,7 +13,7 @@ import WikipediaKit
 @Observable
 class VoiceViewModel {
     var lang = "es"
-    var wikiResult = "El señor de la noche"
+    var wikiResult = ""
 
     let synthesizer = AVSpeechSynthesizer()
     var speaking: Bool = false
