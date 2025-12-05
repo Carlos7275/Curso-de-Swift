@@ -17,6 +17,7 @@ class EjemploTableViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupTableView()
         applySnapshot()
     }
 

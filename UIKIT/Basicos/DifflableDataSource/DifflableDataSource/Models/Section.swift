@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Section: CaseIterable {
+nonisolated enum Section: Hashable, Sendable {
     case main
 }

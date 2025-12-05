@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Message: Hashable {
+nonisolated struct Message: Hashable, Sendable {
     let id: UUID
     let text: String
     let systemImageName: String
